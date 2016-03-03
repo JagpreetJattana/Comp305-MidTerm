@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
 	public Boundary boundary;
     public GameController gameController;
     public EnemyController enemy;
+    public AudioSource tankSound;
 
     // get a reference to the camera to make mouse input work
     public Camera camera; 
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour {
         {
          
             this.gameController.LivesValue -= 1;
+            this.tankSound.Play();
        
         }
  

@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour {
 	public Speed speed;
 	public Boundary boundary;
     public GameController gameController;
+    public AudioSource scoreAudio;
 
     // PRIVATE INSTANCE VARIABLES
     private float _CurrentSpeed;
@@ -37,6 +38,7 @@ public class EnemyController : MonoBehaviour {
 		if (currentPosition.y <= boundary.yMin) {
 			this._Reset();
             this.gameController.ScoreValue+= 10;
+            this.scoreAudio.Play();
         }
 	}
 
